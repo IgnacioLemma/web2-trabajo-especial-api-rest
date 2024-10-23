@@ -1,0 +1,31 @@
+body {
+    background-color: #f8f9fa;
+}
+
+h1 {
+    color: #343a40;
+    text-align: center;
+}
+
+.card {
+    border: none;
+}
+
+.card img {
+    border-radius: 0.5rem;
+}
+
+.card-body {
+    padding: 1.25rem;
+}
+
+.row {
+    margin-top: 20px;
+}
+
+@media (min-width: 768px) {
+    .col-md-4 {
+        flex: 0 0 33.3333%;
+        max-width: 33.3333%;
+    }
+}
