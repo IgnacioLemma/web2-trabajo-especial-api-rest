@@ -1,0 +1,5 @@
+
+*Requerimientos Funcionales Mínimos*
+✅La API Rest debe ser RESTful
+✅Debe tener al menos un servicio que liste (GET) una colección entera de entidades.
+✅El servicio que lista una colección entera debe poder ordenarse opcionalmente por al menos un campo de la tabla, de manera ascendente o descendente.
