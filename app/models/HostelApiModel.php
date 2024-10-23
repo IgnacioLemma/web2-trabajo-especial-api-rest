@@ -1,6 +1,6 @@
 <?php
 require_once './config/config.php';
-class HostelModel {
+class HostelApiModel {
     protected $db;
 function __construct() {
         $this->db = new PDO(

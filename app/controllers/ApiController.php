@@ -1,5 +1,5 @@
 <?php
-require_once './app/views/ViewApiHostel.php';
+require_once './app/view/ViewApiHostel.php';
 class ApiController{
     protected $view;
     private $data;

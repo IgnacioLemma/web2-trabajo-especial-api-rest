@@ -1,5 +1,6 @@
 <?php
 require_once './libs/ConfigRouter.php';
+require_once './app/controllers/RoomsApiController.php';
 
 $router = new Router();
 
@@ -12,3 +13,9 @@ VERB: El verbo HTTP para la función (GET, POST, PUT, DELETE, etc.).
 CONTROLLER: Nombre del controlador a llamar.
 METHOD: Nombre de la función del controlador que ejecutará la tarea.
 */
+// Endpoint para obtener todas las habitaciones
+$router->addRoute('rooms', 'GET', 'RoomsApiController', 'getRooms');
+
+
+// Ejecutar la ruta solicitada
+$router->route($_GET["resource"], $_SERVER['REQUEST_METHOD']);
