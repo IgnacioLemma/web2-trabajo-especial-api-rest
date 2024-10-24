@@ -30,4 +30,19 @@
                 $this->view->response(['error' => 'No se han encontrado habitaciones.'], 404); 
             }
         }
-    }
+
+        // Obtener una habitación por ID
+        public function getRoomById($request) {
+            $id_habitacion = $request->params->id;
+            if (!is_numeric($id_habitacion) || $id_habitacion <= 0) {
+                $this->view->response(['error' => 'ID inválido'], 400);
+                return;
+            }
+            $room = $this->model->getRoomById($id_habitacion);
+            if ($room) {
+                $this->view->response($room, 200);
+            } else {
+                $this->view->response(['error' => 'Habitación no encontrada'], 404);
+            }
+        }
+}
