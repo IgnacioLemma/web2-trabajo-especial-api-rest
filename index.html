@@ -36,7 +36,36 @@
             </div>
             <div class="row" id="showRooms"></div>
             <!--MOSTRAR HABIACIONES DESDE JS-->
+            <form id="roomForm" method="POST">
+                <div class="row">
+                    <div class="mb-3">
+                        <h1 class="my-4">Agregar Habitacion</h1> 
+                        <div class="form-group">
+                            <label>Nombre de la habitacion</label>
+                            <input name="Nombre" type="text" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label>Tipo de habitacion</label>
+                            <input name="Tipo" type="text" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label>Capacidad de la habitacion</label>
+                            <input name="Capacidad" type="text" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label>Precio de la habitacion</label>
+                            <input name="Precio" type="text" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label>Foto de la habitacion</label>
+                            <input name="foto_habitacion" type="text" class="form-control">
+                        </div>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary">Guardar</button>
+            </form>
         </div>
+        
     </main>
 
     <footer class="bg-light text-dark pt-4 pb-2">

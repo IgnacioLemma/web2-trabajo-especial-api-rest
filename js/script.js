@@ -3,6 +3,8 @@
 const BASE_URL = "api/rooms";
 
 let rooms = [];
+let form = document.querySelector('#roomForm');
+form.addEventListener('submit', insertRoom);
 
 // Función para obtener habitaciones
 async function getRooms(orderBy = 'id_habitacion', direction = 'ASC') {
@@ -48,6 +50,36 @@ function showRooms(rooms) {
         `;
         roomContainer.innerHTML += roomCard; 
     });
+}
+
+async function insertRoom(e){
+    e.preventDefault();
+    let data = new FormData(form);
+    let room = {
+        Nombre : data.get('Nombre'),
+        Tipo: data.get('Tipo'),
+        Capacidad: data.get('Capacidad'),
+        Precio: data.get('Precio'),
+        foto_habitacion: data.get('foto_habitacion')
+    };
+    try {
+        let response = await fetch (BASE_URL, {  // Corregido
+            method: 'POST',
+            headers : { 'Content-Type': 'application/json'},
+            body: JSON.stringify(room)
+        });
+        if (!response.ok) {
+            throw new Error('Error del servidor');
+        }
+        let nRoom = await response.json();
+
+        rooms.push(nRoom);
+        showRooms(rooms);
+
+        form.reset();
+    } catch(e) {
+        console.log(e);
+    }
 }
 
 getRooms();
