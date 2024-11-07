@@ -45,4 +45,26 @@
                 $this->view->response(['error' => 'Habitación no encontrada'], 404);
             }
         }
+    
+        public function creatRoom($request){
+            if (empty($request->body->Nombre) || empty($request->body->Tipo) || empty($request->body->Capacidad) || empty($request->body->Precio) || empty($request->body->foto_habitacion)){
+                return $this-> view -> response('Falta completar datos', 400);
+            }
+
+            $Nombre = $request->body->Nombre;
+            $Tipo = $request->body->Tipo;
+            $Capacidad = $request->body->Capacidad; 
+            $Precio = $request->body->Precio;
+            $foto_habitacion = $request->body->foto_habitacion; 
+
+            // inserto los datos
+            $id = $this->model->creatRoom($Nombre, $Tipo, $Capacidad, $Precio, $foto_habitacion);
+
+            if (!$id) {
+                return $this->view->response("Error al insertar tarea", 500);
+            }
+            //Devolvemos el recurso recien insertado
+            $room = $this->model->getRoomById($id);
+            return $this->view->response($room, 201);
+        }
 }

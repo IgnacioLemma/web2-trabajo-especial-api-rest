@@ -17,7 +17,8 @@ METHOD: Nombre de la función del controlador que ejecutará la tarea.
 $router->addRoute('rooms', 'GET', 'RoomsApiController', 'getRooms');
 // Endpoint para obtener una habitación por ID
 $router->addRoute('room/:id', 'GET', 'RoomsApiController', 'getRoomById');
-
+// Endpoint para crear una habitacion
+$router->addRoute('room', 'POST', 'RoomsApiController', 'creatRoom');
 
 // Ejecutar la ruta solicitada
 $router->route($_GET["resource"], $_SERVER['REQUEST_METHOD']);

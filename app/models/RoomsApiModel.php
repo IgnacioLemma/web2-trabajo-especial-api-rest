@@ -18,4 +18,13 @@ class RoomsModel extends HostelApiModel {
         $query->execute();
         return $query->fetch(PDO::FETCH_OBJ);
     }
+
+    function creatRoom($Nombre, $Tipo, $Capacidad, $Precio, $foto_habitacion, $finished = false){
+        $query = $this->db->prepare('INSERT INTO habitaciones (Nombre, Tipo, Capacidad, Precio, foto_habitacion) VALUES (?,?,?,?,?)');
+        $query -> execute ([$Nombre, $Tipo, $Capacidad, $Precio, $foto_habitacion]);
+
+        $id = $this->db->lastInsertId();
+
+        return $id;
+    }
 }
