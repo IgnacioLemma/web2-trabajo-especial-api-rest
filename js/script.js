@@ -63,7 +63,7 @@ async function insertRoom(e){
         foto_habitacion: data.get('foto_habitacion')
     };
     try {
-        let response = await fetch (BASE_URL, {  // Corregido
+        let response = await fetch (BASE_URL, {  
             method: 'POST',
             headers : { 'Content-Type': 'application/json'},
             body: JSON.stringify(room)
