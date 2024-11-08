@@ -48,7 +48,7 @@ function showRooms(rooms) {
                 </div>
             </div>
         `;
-        roomContainer.innerHTML += roomCard; 
+        roomContainer.innerHTML += roomCard;
     });
 }
 
@@ -56,16 +56,16 @@ async function insertRoom(e){
     e.preventDefault();
     let data = new FormData(form);
     let room = {
-        Nombre : data.get('Nombre'),
+        Nombre: data.get('Nombre'),
         Tipo: data.get('Tipo'),
         Capacidad: data.get('Capacidad'),
         Precio: data.get('Precio'),
         foto_habitacion: data.get('foto_habitacion')
     };
     try {
-        let response = await fetch (BASE_URL, {  
+        let response = await fetch (BASE_URL, {
             method: 'POST',
-            headers : { 'Content-Type': 'application/json'},
+            headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(room)
         });
         if (!response.ok) {
