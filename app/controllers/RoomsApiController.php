@@ -49,7 +49,7 @@
         //Creamos una habitacion POST
         public function createRoom($request){
             if (empty($request->body->Nombre) || empty($request->body->Tipo) || empty($request->body->Capacidad) || empty($request->body->Precio) || empty($request->body->foto_habitacion)){
-                return $this-> view -> response('Falta completar datos', 400);
+                return $this-> view -> response(['error' => 'Falta completar datos'], 400);
             }
 
             $Nombre = $request->body->Nombre;
@@ -62,10 +62,42 @@
             $id = $this->model->insertRoom($Nombre, $Tipo, $Capacidad, $Precio, $foto_habitacion);
 
             if (!$id) {
-                return $this->view->response("Error al insertar tarea", 500);
+                return $this->view->response(['error' => 'Error al insertar tarea'], 500);
             }
             //Devolvemos el recurso recien insertado
             $room = $this->model->getRoomById($id);
             return $this->view->response($room, 201);
         }
+
+        // Actualizar una habitacion PUT
+        public function updateRoom($request) {
+            $id_habitacion = $request->params->id;
+        
+            // Verificar si los datos están completos
+            if (!isset($request->body->Nombre) || 
+                !isset($request->body->Tipo) || 
+                !isset($request->body->Capacidad) || 
+                !isset($request->body->Precio) || 
+                !isset($request->body->foto_habitacion)) {
+                    
+                return $this->view->response(['error' => 'Falta completar datos'], 400);
+            }
+        
+            // Crear array de datos para actualizar
+            $roomData = [
+                'Nombre' => $request->body->Nombre,
+                'Tipo' => $request->body->Tipo,
+                'Capacidad' => $request->body->Capacidad,
+                'Precio' => $request->body->Precio,
+                'foto_habitacion' => $request->body->foto_habitacion
+            ];
+            
+            // Actualizar los datos
+            if ($this->model->updateRoom($id_habitacion, $roomData)) {
+                $this->view->response(['success' => 'Habitacion actualizada'], 200);
+            } else {
+                $this->view->response(['error' => 'Habitacion no encontrada'], 404); 
+            }
+        }
+        
 }

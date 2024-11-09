@@ -27,4 +27,18 @@ class RoomsModel extends HostelApiModel {
 
         return $id;
     }
+    
+    // Actualizar una habitación
+    public function updateRoom($id_habitacion, $roomData) {
+        $query = $this->db->prepare("UPDATE habitaciones SET Nombre = :nombre, Tipo = :tipo, Capacidad = :capacidad, Precio = :precio, foto_habitacion = :foto_habitacion WHERE id_habitacion = :id");
+    
+        $query->bindValue(':nombre', $roomData['Nombre']);
+        $query->bindValue(':tipo', $roomData['Tipo']);
+        $query->bindValue(':capacidad', $roomData['Capacidad']);
+        $query->bindValue(':precio', $roomData['Precio']);
+        $query->bindValue(':foto_habitacion', $roomData['foto_habitacion']);
+        $query->bindValue(':id', $id_habitacion, PDO::PARAM_INT);
+    
+        return $query->execute();
+    }
 }
