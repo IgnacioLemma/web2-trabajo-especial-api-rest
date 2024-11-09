@@ -72,8 +72,6 @@
         // Actualizar una habitacion PUT
         public function updateRoom($request) {
             $id_habitacion = $request->params->id;
-        
-            // Verificar si los datos están completos
             if (!isset($request->body->Nombre) || 
                 !isset($request->body->Tipo) || 
                 !isset($request->body->Capacidad) || 
@@ -82,8 +80,7 @@
                     
                 return $this->view->response(['error' => 'Falta completar datos'], 400);
             }
-        
-            // Crear array de datos para actualizar
+
             $roomData = [
                 'Nombre' => $request->body->Nombre,
                 'Tipo' => $request->body->Tipo,
@@ -91,8 +88,7 @@
                 'Precio' => $request->body->Precio,
                 'foto_habitacion' => $request->body->foto_habitacion
             ];
-            
-            // Actualizar los datos
+
             if ($this->model->updateRoom($id_habitacion, $roomData)) {
                 $this->view->response(['success' => 'Habitacion actualizada'], 200);
             } else {
