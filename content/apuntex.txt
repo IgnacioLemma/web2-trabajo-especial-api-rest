@@ -3,3 +3,12 @@
 ✅La API Rest debe ser RESTful
 ✅Debe tener al menos un servicio que liste (GET) una colección entera de entidades.
 ✅El servicio que lista una colección entera debe poder ordenarse opcionalmente por al menos un campo de la tabla, de manera ascendente o descendente.
+✅Debe tener al menos un servicio que obtenga (GET) una entidad determinada por su ID
+✅Debe tener al menos un servicio para agregar y otro para modificar datos (POST y PUT)
+✅La API Rest debe manejar de manera adecuada al menos los siguientes códigos de error (200, 201, 400 y 404)
+*Requerimientos Funcionales Optativos*
+❌El servicio que obtiene una colección entera debe poder paginar
+❌El servicio que obtiene una colección entera debe poder filtrarse por alguno de sus campos
+✅El servicio que obtiene una colección entera debe poder ordenarse por cualquiera de los campos de la tabla de manera ascendente o descendente
+❌El servicio debe requerir un token para realizar modificaciones (PUT, POST)
+

@@ -21,6 +21,8 @@ $router->addRoute('room/:id', 'GET', 'RoomsApiController', 'getRoomById');
 $router->addRoute('rooms', 'POST', 'RoomsApiController', 'createRoom');
 // Endpoint para actualizar una habitación por ID
 $router->addRoute('rooms/:id', 'PUT', 'RoomsApiController', 'updateRoom');
+// Endpoint para
+$router->addRoute('room', 'GET', 'RoomsApiController', 'filterRooms');
 
 // Ejecutar la ruta solicitada
 $router->route($_GET["resource"], $_SERVER['REQUEST_METHOD']);

@@ -41,4 +41,15 @@ class RoomsModel extends HostelApiModel {
     
         return $query->execute();
     }
+
+    public function filterRooms($filter, $type) {
+        $allowedFilters = ["Nombre","Tipo", "Capacidad", "Precio", "foto_habitacion"];
+        $filter = in_array($filter, $allowedFilters) ? $filter : "Precio";
+        $query = $this->db->prepare("SELECT * FROM habitaciones WHERE $filter = :type");
+    
+        $query->bindParam(':type', $type, PDO::PARAM_STR);
+        $query->execute();
+        $roomsFilter = $query->fetchAll(PDO::FETCH_OBJ);
+        return $roomsFilter;
+    }
 }

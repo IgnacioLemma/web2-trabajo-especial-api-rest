@@ -96,4 +96,15 @@
             }
         }
         
+    public function filterRooms(){
+        $filter = $_GET['filter'];
+        $type = $_GET['type'];
+
+        if($filter == 'Nombre' || $filter == 'Tipo' || $filter == 'Capacidad' || $filter == 'Precio' || $filter == 'foto_habitacion'){
+            $date = $this->model->filterRooms($filter,$type);
+            $this->view->response($date,200);
+        } else{
+            $this->view->response(['error' => 'Filtro invalido"'],404);
+        }
+    }
 }
