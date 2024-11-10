@@ -13,6 +13,7 @@
 
         // Obtener todas las habitaciones con ordenamientos
         public function getRooms() {
+
             $orderBy = isset($_GET['order_by']) ? $_GET['order_by'] : 'id_habitacion';
             $direction = isset($_GET['direction']) && strtoupper($_GET['direction']) === 'DESC' ? 'DESC' : 'ASC'; 
 
@@ -47,7 +48,11 @@
         }
     
         //Creamos una habitacion POST
-        public function createRoom($request){
+        public function createRoom($request, $res){
+            if(!$res->user) {
+                return $this->view->response(['error' =>'No posee los permisos para insertar habitaciones'], 401);
+            }
+    
             if (empty($request->body->Nombre) || empty($request->body->Tipo) || empty($request->body->Capacidad) || empty($request->body->Precio) || empty($request->body->foto_habitacion)){
                 return $this-> view -> response(['error' => 'Falta completar datos'], 400);
             }
@@ -62,7 +67,7 @@
             $id = $this->model->insertRoom($Nombre, $Tipo, $Capacidad, $Precio, $foto_habitacion);
 
             if (!$id) {
-                return $this->view->response(['error' => 'Error al insertar tarea'], 500);
+                return $this->view->response(['error' => 'Error al insertar habitacion'], 500);
             }
             //Devolvemos el recurso recien insertado
             $room = $this->model->getRoomById($id);
@@ -70,7 +75,10 @@
         }
 
         // Actualizar una habitacion PUT
-        public function updateRoom($request) {
+        public function updateRoom($request, $res) {
+            if(!$res->user) {
+                return $this->view->response(['error' =>'No posee los permisos para editar habitaciones'], 401);
+            }
             $id_habitacion = $request->params->id;
             if (!isset($request->body->Nombre) || 
                 !isset($request->body->Tipo) || 
@@ -104,7 +112,7 @@
             $date = $this->model->filterRooms($filter,$type);
             $this->view->response($date,200);
         } else{
-            $this->view->response(['error' => 'Filtro invalido"'],404);
+            $this->view->response(['error' => 'Filtro invalido'],404);
         }
     }
 }

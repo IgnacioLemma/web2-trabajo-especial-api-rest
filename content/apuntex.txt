@@ -8,7 +8,7 @@
 ✅La API Rest debe manejar de manera adecuada al menos los siguientes códigos de error (200, 201, 400 y 404)
 *Requerimientos Funcionales Optativos*
 ❌El servicio que obtiene una colección entera debe poder paginar
-❌El servicio que obtiene una colección entera debe poder filtrarse por alguno de sus campos
+✅El servicio que obtiene una colección entera debe poder filtrarse por alguno de sus campos
 ✅El servicio que obtiene una colección entera debe poder ordenarse por cualquiera de los campos de la tabla de manera ascendente o descendente
-❌El servicio debe requerir un token para realizar modificaciones (PUT, POST)
+✅El servicio debe requerir un token para realizar modificaciones (PUT, POST)
 
