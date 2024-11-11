@@ -7,8 +7,41 @@
 ✅Debe tener al menos un servicio para agregar y otro para modificar datos (POST y PUT)
 ✅La API Rest debe manejar de manera adecuada al menos los siguientes códigos de error (200, 201, 400 y 404)
 *Requerimientos Funcionales Optativos*
-❌El servicio que obtiene una colección entera debe poder paginar
+✅El servicio que obtiene una colección entera debe poder paginar
 ✅El servicio que obtiene una colección entera debe poder filtrarse por alguno de sus campos
 ✅El servicio que obtiene una colección entera debe poder ordenarse por cualquiera de los campos de la tabla de manera ascendente o descendente
 ✅El servicio debe requerir un token para realizar modificaciones (PUT, POST)
 
+*Requerimientos NO Funcionales OBLIGATORIOS*
+❌Se debe adjuntar documentación de los endpoints generados en el README.md del repositorio. 
+Es decir, una descripción de cada endpoint, cómo se usan y ejemplos. 
+Entender que esta documentación la va a leer otro desarrollador para entender cómo se consume la API.
+
+
+*Generales:*
+✅La API REST se debe crear en otro repositorio distinto al trabajo original.
+✅La base de datos es la misma para los dos (incluirla de todos modos en el nuevo repositorio).
+✅Todas las pruebas se harán utilizando POSTMAN (o similar) 
+    ➡ No es necesario crear un frontend que consuma la API. Queda a total elección del alumno/a si quiere agregar un frontend. 
+
+
+*Se evaluará:*
+✅correcta división de responsabilidades en las clases, 
+✅❓no repetición de código, 
+✅❓identificadores (nombres de clases, variables, etc) descriptivos, etc.
+✅Los trabajos deben implementar la totalidad de la funcionalidad (ambas entregas) funcionando correctamente. 
+
+✅El trabajo debe realizarse en equipos de 2, donde a cada miembro se le evaluarán distintas responsabilidades de la siguiente forma:
+Miembro A:
+✅Listado ordenado
+✅PUT
+✅Ordenado por cualquier campo (opcional)
+
+Miembro B:
+✅Obtener un elemento por ID
+✅POST
+✅Filtado (opcional)
+
+Opcionales que suman a ambos:
+✅Paginado
+✅Autenticación Token
