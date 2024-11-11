@@ -52,4 +52,19 @@ class RoomsModel extends HostelApiModel {
         $roomsFilter = $query->fetchAll(PDO::FETCH_OBJ);
         return $roomsFilter;
     }
+
+    public function getTotalRooms() {
+        $query = $this->db->prepare("SELECT COUNT(*) AS total FROM habitaciones");
+        $query->execute();
+        $result = $query->fetch(PDO::FETCH_OBJ);
+        return $result->total;
+    }
+
+    public function getRoomsPaginado($orderBy, $direction, $offset, $limit) {
+        $query = $this->db->prepare("SELECT * FROM habitaciones ORDER BY $orderBy $direction LIMIT :offset, :limit");
+        $query->bindValue(':offset', $offset, PDO::PARAM_INT);
+        $query->bindValue(':limit', $limit, PDO::PARAM_INT);
+        $query->execute();
+        return $query->fetchAll(PDO::FETCH_OBJ);
+    }
 }

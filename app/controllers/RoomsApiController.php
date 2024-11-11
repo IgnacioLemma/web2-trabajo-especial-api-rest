@@ -16,6 +16,8 @@
 
             $orderBy = isset($_GET['order_by']) ? $_GET['order_by'] : 'id_habitacion';
             $direction = isset($_GET['direction']) && strtoupper($_GET['direction']) === 'DESC' ? 'DESC' : 'ASC'; 
+            $page = isset($_GET['page']) ? (int)$_GET['page'] : 1;
+            $itemsPage = isset($_GET['itemspage']) ? (int)$_GET['itemspage'] : 6;
 
             // Verificación si se puede ordenar
             $validFyelds = ['id_habitacion', 'Nombre', 'Tipo', 'Capacidad', 'Precio'];
@@ -24,11 +26,21 @@
                 return;
             }
 
-            $rooms = $this->model->getRooms($orderBy, $direction);
+            $offset = ($page - 1) * $itemsPage;
+            $totalRooms = $this->model->getTotalRooms();
+            $totalPages = ceil($totalRooms / $itemsPage);
+            $rooms = $this->model->getRoomsPaginado($orderBy, $direction, $offset, $itemsPage);
             if ($rooms) {
-                $this->view->response($rooms, 200); 
+                $response = [
+                    'page' => $page,
+                    'itemspage' => $itemsPage,
+                    'totalitems' => $totalRooms,
+                    'totalpages' => $totalPages,
+                    'rooms' => $rooms
+                ];
+                $this->view->response($response, 200);
             } else {
-                $this->view->response(['error' => 'No se han encontrado habitaciones.'], 404); 
+                $this->view->response(['error' => 'No se han encontrado habitaciones para la página solicitada.'], 404);
             }
         }
 
