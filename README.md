@@ -1,3 +1,11 @@
+# TRABAJO PRACTICO ESPECIAL WEB2
+## Entrega 3
+
+## Diagrama
+
+![Diagrama DER de la base de datos](./public/img/DER/diagrama_entrega3.png)
+
+> Diagrama DER de la base de datos
 
 ## Contenido
 1. [Listado completo de habitaciones](#listado-completo-de-habitaciones)
