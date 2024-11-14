@@ -1,12 +1,12 @@
 
 ### Aclaraciones:
-    - Paginación: 
-        - page: Muestra el número de la página (página 1 como predeterminado)
-        - itemspage: Muestra la cantidad de items en la página (por defecto 6)
-        - totalitems: Muestra la cantidad de items que hay.
-        - totalpages: Muestra la cantidad de páginas que hay.
-        - all: si all = true, muestra el listado completo de las habitaciones sin paginar
-        - ej: *endpoint*&page=1&itemspage=8
+- Paginación: 
+    - page: Muestra el número de la página (página 1 como predeterminado)
+    - itemspage: Muestra la cantidad de items en la página (por defecto 6)
+    - totalitems: Muestra la cantidad de items que hay.
+    - totalpages: Muestra la cantidad de páginas que hay.
+    - all: si all = true, muestra el listado completo de las habitaciones sin paginar
+     - ej: *endpoint*&page=1&itemspage=8
 
 
 ## Endpoints de la API
