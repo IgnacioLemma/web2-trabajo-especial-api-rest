@@ -1,12 +1,4 @@
 
-### Aclaraciones:
-- Paginación: 
-    - page: Muestra el número de la página (página 1 como predeterminado)
-    - itemspage: Muestra la cantidad de items en la página (por defecto 6)
-    - totalitems: Muestra la cantidad de items que hay.
-    - totalpages: Muestra la cantidad de páginas que hay.
-    - all: si all = true, muestra el listado completo de las habitaciones sin paginar
-     - ej: *endpoint*&page=1&itemspage=8
 
 
 ## Endpoints de la API
@@ -237,3 +229,74 @@
 ```
 - Aclaración: Requiere token (Bearer [token])
 
+### PAGINACIÓN
+- Verbo: GET
+- URL: `http://localhost/web2-trabajo-especial-api-rest/api/rooms?order_by=Nombre&direction=ASC&page=2&itemspage=6`
+- Descripción: Muestra un listado completo de habitaciones paginado
+#### Aclaraciones:
+- Paginación: 
+    - page: Muestra el número de la página (página 1 como predeterminado)
+    - itemspage: Muestra la cantidad de items en la página (por defecto 6)
+    - totalitems: Muestra la cantidad de items que hay.
+    - totalpages: Muestra la cantidad de páginas que hay.
+    - all: si all = true, muestra el listado completo de las habitaciones sin paginar
+    - ej: *endpoint*&page=1&itemspage=8
+#### Ejemplo JSON:
+```json
+{
+  "page": 2,
+  "itemspage": 6,
+  "totalitems": 20,
+  "totalpages": 4,
+  "rooms": [
+    {
+      "id_habitacion": 3,
+      "Nombre": "Habitación Doble - Cama Queen",
+      "Tipo": "Doble",
+      "Capacidad": 2,
+      "Precio": 600,
+      "foto_habitacion": "public/img/FotoHabitaciones/671557a04cebe8.88236537.jpg"
+    },
+    {
+      "id_habitacion": 12,
+      "Nombre": "Habitación Doble - Oasis en Dubai",
+      "Tipo": "Doble",
+      "Capacidad": 2,
+      "Precio": 850,
+      "foto_habitacion": "public/img/FotoHabitaciones/67155916e66168.27036484.jpg"
+    },
+    {
+      "id_habitacion": 7,
+      "Nombre": "Habitación Doble - Romántica en Mendoza",
+      "Tipo": "Doble",
+      "Capacidad": 2,
+      "Precio": 800,
+      "foto_habitacion": "public/img/FotoHabitaciones/671558701e7a10.55558760.jpg"
+    },
+    {
+      "id_habitacion": 17,
+      "Nombre": "Habitación Económica - Ahorro en La Plata",
+      "Tipo": "Economica",
+      "Capacidad": 2,
+      "Precio": 500,
+      "foto_habitacion": "public/img/FotoHabitaciones/67155988eaa6b1.01686013.jpg"
+    },
+    {
+      "id_habitacion": 20,
+      "Nombre": "Habitación Económica - Confort en Tandil",
+      "Tipo": "Económica",
+      "Capacidad": 2,
+      "Precio": 450,
+      "foto_habitacion": "public/img/FotoHabitaciones/671559bc9ada63.23188104.jpg"
+    },
+    {
+      "id_habitacion": 10,
+      "Nombre": "Habitación Familiar - Escape a la Costa",
+      "Tipo": "Familiar",
+      "Capacidad": 5,
+      "Precio": 2500,
+      "foto_habitacion": "public/img/FotoHabitaciones/671558bfa3ee81.64071381.jpg"
+    }
+  ]
+}
+```
