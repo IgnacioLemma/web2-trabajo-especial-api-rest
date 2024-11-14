@@ -123,9 +123,9 @@
 ```
 
 ### Listado con ordenamientos (DESC)
-    - Verbo: GET
-    - URL: http://localhost/web2-trabajo-especial-api-rest/api/rooms?order_by=Precio&direction=DESC
-    - Descripción: Listado completo de las habitaciones ordenado de manera descendente según, en este caso, la capacidad.
+- Verbo: GET
+- URL: http://localhost/web2-trabajo-especial-api-rest/api/rooms?order_by=Precio&direction=DESC
+- Descripción: Listado completo de las habitaciones ordenado de manera descendente según, en este caso, la capacidad.
 
 ##### Ejemplo JSON: 
 ```json
@@ -187,4 +187,21 @@
     - Precio
 - direction:
     - ASC
-    - DESC         
+    - DESC
+   
+### Obtener item por ID
+- Verbo: GET
+- URL: `http://localhost/web2-trabajo-especial-api-rest/api/room/4`
+ - Descripción: Obtiene un item por su ID
+
+##### Ejemplo JSON: 
+```json
+{
+    "id_habitacion": 4,
+    "Nombre": "Suite - Lujo en París",
+    "Tipo": "Suite",
+    "Capacidad": 4,
+    "Precio": 1500,
+    "foto_habitacion": "public/img/FotoHabitaciones/671557b408b611.73779563.jpg"
+}
+```
