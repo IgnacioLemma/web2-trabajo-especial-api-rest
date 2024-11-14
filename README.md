@@ -220,3 +220,20 @@
 }
 ```
 - Aclaración: Requiere token (Bearer [token])
+- 
+- ### Modificar Item (PUT)
+- Verbo: PUT
+- URL: `http://localhost/web2-trabajo-especial-api-rest/api/rooms/{id_habitacion}`
+- Descripción: Actualiza una habitación
+- Body: Ejmplo JSON para actualizar una habitación
+```json
+{
+  "Nombre": "Habitación Económica - Cabañas en Tandil Actualizada",
+  "Tipo": "Económica",
+  "Capacidad": 3,
+  "Precio": 500,
+  "foto_habitacion": "public/img/FotoHabitaciones/fotohabitaciontandil_actualizada.jpg"
+}
+```
+- Aclaración: Requiere token (Bearer [token])
+
