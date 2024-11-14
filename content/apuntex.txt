@@ -16,6 +16,15 @@
 ❌Se debe adjuntar documentación de los endpoints generados en el README.md del repositorio. 
 Es decir, una descripción de cada endpoint, cómo se usan y ejemplos. 
 Entender que esta documentación la va a leer otro desarrollador para entender cómo se consume la API.
+    ➡ colección entera de entidades ✅ http://localhost/web2-trabajo-especial-api-rest/api/rooms?all=true
+    ➡ lista una colección entera debe poder ordenarse opcionalmente por al menos un campo de la tabla, de manera ascendente o descendente
+    ➡ (GET) una entidad determinada por su ID. 
+    ➡ agregar y otro para modificar datos (POST y PUT)
+    ➡ paginar.  
+    ➡ colección entera debe poder filtrarse por alguno de sus campos.
+    ➡ colección entera debe poder ordenarse por cualquiera de los campos de la tabla de manera ascendente o descendente. (A diferencia del obligatorio que es solo por un campo a elección). 
+    ➡ El servicio debe requerir un token para realizar modificaciones (PUT, POST)
+
 
 
 *Generales:*

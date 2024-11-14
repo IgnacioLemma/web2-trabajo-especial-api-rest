@@ -18,11 +18,22 @@
             $direction = isset($_GET['direction']) && strtoupper($_GET['direction']) === 'DESC' ? 'DESC' : 'ASC'; 
             $page = isset($_GET['page']) ? (int)$_GET['page'] : 1;
             $itemsPage = isset($_GET['itemspage']) ? (int)$_GET['itemspage'] : 6;
+            $all = isset($_GET['all']) ? $_GET['all'] === 'true' : false;
 
             // Verificación si se puede ordenar
             $validFyelds = ['id_habitacion', 'Nombre', 'Tipo', 'Capacidad', 'Precio'];
             if (!in_array($orderBy, $validFyelds)) {
                 $this->view->response(['error' => 'Seleccione un campo valido.'], 400); 
+                return;
+            }
+            // Sino hay paginación
+            if ($all) {
+                $rooms = $this->model->getRooms($orderBy, $direction);
+                $response = [
+                    'totalitems' => count($rooms),
+                    'rooms' => $rooms
+                ];
+                $this->view->response($response, 200);
                 return;
             }
 
