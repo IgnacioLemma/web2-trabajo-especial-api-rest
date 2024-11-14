@@ -1,39 +1,39 @@
 
+### Aclaraciones:
+    - Paginación: 
+        - page: Muestra el numero de la pagina (pagina 1 como predeterminado)
+        - itemspage : Muestra la cantidad de items en la pagina (Por defecto 6)
+        - totalitems: Muestra la cantidad de items que hay.
+        - totalpages: Muestra la cantidad de paginas que hay.
 
 ## Listado completo de entidades (GET)
 ### Listado de Habitaciones
     - Verbo: GET
     - URL: http://localhost/web2-trabajo-especial-api-rest/api/rooms
-    - Descripción: El endpoint devuelve el listado completo de habitabiciones.
+    - Descripción: El endpoint devuelve el listado completo de habitabiciones
+
 
 ##### Ejemplo JSON: 
 ```json
-[
     {
-        "id_habitacion": 1,
-        "Nombre": "Habitación Delux - Delux en Bahamas updated",
-        "Tipo": "Delux",
-        "Capacidad": 5,
-        "Precio": 1000,
-        "foto_habitacion": ""
-    },
-    {
-        "id_habitacion": 2,
-        "Nombre": "Habitación Doble - Cama King",
-        "Tipo": "Doble",
-        "Capacidad": 2,
-        "Precio": 750,
-        "foto_habitacion": "public/img/FotoHabitaciones/671557988fecc3.17522671.jpg"
-    },
-    {
-        "id_habitacion": 3,
-        "Nombre": "Habitación Doble - Cama Queen",
-        "Tipo": "Doble",
-        "Capacidad": 2,
-        "Precio": 600,
-        "foto_habitacion": "public/img/FotoHabitaciones/671557a04cebe8.88236537.jpg"
-    },
-// continua el listado
+"page":1,"itemspage":6,"totalitems":20,"totalpages":4,"rooms":[
+{
+"id_habitacion":1,"Nombre":"Habitación Individual - Vista al Mar","Tipo":"Individual","Capacidad":1,"Precio":500,"foto_habitacion":"public/img/FotoHabitaciones/6715577d87c7b0.14620296.jpg"
+},
+{
+"id_habitacion":2,"Nombre":"Habitación Doble - Cama King","Tipo":"Doble","Capacidad":2,"Precio":750,"foto_habitacion":"public/img/FotoHabitaciones/671557988fecc3.17522671.jpg"
+},
+{
+"id_habitacion":3,"Nombre":"Habitación Doble - Cama Queen","Tipo":"Doble","Capacidad":2,"Precio":600,"foto_habitacion":"public/img/FotoHabitaciones/671557a04cebe8.88236537.jpg"
+},
+{
+"id_habitacion":4,"Nombre":"Suite - Lujo en París","Tipo":"Suite","Capacidad":4,"Precio":1500,"foto_habitacion":"public/img/FotoHabitaciones/671557b408b611.73779563.jpg"
+},
+{
+"id_habitacion":5,"Nombre":"Habitación Compartida - Backpackers","Tipo":"Compartida","Capacidad":8,"Precio":2000,"foto_habitacion":"public/img/FotoHabitaciones/67155b75b082c2.24469727.jpg"
+},
+{"id_habitacion":6,"Nombre":"Habitación Individual - Relax en Buenos Aires","Tipo":"Individual","Capacidad":1,"Precio":600,"foto_habitacion":"public/img/FotoHabitaciones/6715581a157d90.52665819.jpg"
+}]}
 ```
 ### Listado con ordenamientos (ASC)
     - Verbo: GET
