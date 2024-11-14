@@ -335,3 +335,21 @@
   }
 ]
 ```
+### TOKEN
+- Verbo: GET
+- URL: `http://localhost/web2-trabajo-especial-api-rest/api/user/token`
+- Descripción: Obtiene el token para agregar y modificar habitaciones
+- Authorization:
+   - Type: Basic Auth
+         - Username: webadmin@unicen.tudai
+         - Password: admin
+- Se obtiene:
+```json
+  {
+  "token": "[TOKEN]"
+ }
+```
+- Utilización:
+    - En las peticiones PUT y POST:
+          - Authorization : Bearer Token
+              - Colocar el token dado en *TOKEN*         
