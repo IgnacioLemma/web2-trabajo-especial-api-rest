@@ -1,15 +1,17 @@
 
+### Aclaraciones:
+    - Paginación: 
+        - page: Muestra el numero de la pagina (pagina 1 como predeterminado)
+        - itemspage : Muestra la cantidad de items en la pagina (Por defecto 6)
+        - totalitems: Muestra la cantidad de items que hay.
+        - totalpages: Muestra la cantidad de paginas que hay.
 
 ## Listado completo de entidades (GET)
 ### Listado de Habitaciones
     - Verbo: GET
     - URL: http://localhost/web2-trabajo-especial-api-rest/api/rooms
     - Descripción: El endpoint devuelve el listado completo de habitabiciones
-    - Paginación: 
-        - page: Muestra el numero de la pagina (pagina 1 como predeterminado)
-        - itemspage : Muestra la cantidad de items en la pagina (Por defecto 6)
-        - totalitems: Muestra la cantidad de items que hay.
-        - totalpages: Muestra la cantidad de paginas que hay.
+
 
 ##### Ejemplo JSON: 
 ```json
