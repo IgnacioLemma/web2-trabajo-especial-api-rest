@@ -300,3 +300,38 @@
   ]
 }
 ```
+### Filtrar Items (GET)
+- Verbo: GET
+- URL: `http://localhost/web2-trabajo-especial-api-rest/api/room?filter=Capacidad&type=2`
+- Descripción: Filtra las habitaciones por un campo especificado
+- Campos validos: Nombre, Tipo, Capacidad, Precio, foto_habitacion.
+- El parámetro filter define el campo y type el valor a buscar.
+#### Ejemplo JSON:
+```json
+[
+  {
+    "id_habitacion": 2,
+    "Nombre": "Habitación Doble - Cama King",
+    "Tipo": "Doble",
+    "Capacidad": 2,
+    "Precio": 750,
+    "foto_habitacion": "public/img/FotoHabitaciones/671557988fecc3.17522671.jpg"
+  },
+  {
+    "id_habitacion": 3,
+    "Nombre": "Habitación Doble - Cama Queen",
+    "Tipo": "Doble",
+    "Capacidad": 2,
+    "Precio": 600,
+    "foto_habitacion": "public/img/FotoHabitaciones/671557a04cebe8.88236537.jpg"
+  },
+  {
+    "id_habitacion": 7,
+    "Nombre": "Habitación Doble - Romántica en Mendoza",
+    "Tipo": "Doble",
+    "Capacidad": 2,
+    "Precio": 800,
+    "foto_habitacion": "public/img/FotoHabitaciones/671558701e7a10.55558760.jpg"
+  }
+]
+```
