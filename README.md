@@ -1,5 +1,14 @@
 
-
+## Contenido
+1. [Listado completo de habitaciones](#listado-completo-de-habitaciones)
+2. [Listado con ordenamientos (ASC)](#listado-con-ordenamientos-asc)
+3. [Listado con ordenamientos (DESC)](#listado-con-ordenamientos-desc)
+4. [Obtener item por ID](#obtener-item-por-id)
+5. [Agregar Item (POST)](#agregar-item-post)
+6. [Modificar Item (PUT)](#modificar-item-put)
+7. [Paginación](#paginación)
+8. [Filtrar Items (GET)](#filtrar-items-get)
+9. [Obtener Token](#token)
 
 ## Endpoints de la API
 
