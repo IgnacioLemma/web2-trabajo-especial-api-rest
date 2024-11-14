@@ -13,17 +13,21 @@
 ✅El servicio debe requerir un token para realizar modificaciones (PUT, POST)
 
 *Requerimientos NO Funcionales OBLIGATORIOS*
-❌Se debe adjuntar documentación de los endpoints generados en el README.md del repositorio. 
+✅Se debe adjuntar documentación de los endpoints generados en el README.md del repositorio. 
 Es decir, una descripción de cada endpoint, cómo se usan y ejemplos. 
 Entender que esta documentación la va a leer otro desarrollador para entender cómo se consume la API.
     ➡ colección entera de entidades ✅ http://localhost/web2-trabajo-especial-api-rest/api/rooms?all=true
-    ➡ lista una colección entera debe poder ordenarse opcionalmente por al menos un campo de la tabla, de manera ascendente o descendente
-    ➡ (GET) una entidad determinada por su ID. 
-    ➡ agregar y otro para modificar datos (POST y PUT)
-    ➡ paginar.  
-    ➡ colección entera debe poder filtrarse por alguno de sus campos.
-    ➡ colección entera debe poder ordenarse por cualquiera de los campos de la tabla de manera ascendente o descendente. (A diferencia del obligatorio que es solo por un campo a elección). 
-    ➡ El servicio debe requerir un token para realizar modificaciones (PUT, POST)
+    ➡ lista una colección entera debe poder ordenarse opcionalmente por al menos un campo de la tabla, de manera ascendente o descendente ✅
+        ➡✅➡ colección entera debe poder ordenarse por cualquiera de los campos de la tabla de manera ascendente o descendente. (A diferencia del obligatorio que es solo por un campo a elección). 
+            ➡ http://localhost/web2-trabajo-especial-api-rest/api/rooms?order_by=Precio&direction=ASC&all=true
+            ➡ http://localhost/web2-trabajo-especial-api-rest/api/rooms?order_by=Capacidad&direction=DESC&all=true
+    ➡ (GET) una entidad determinada por su ID. ✅ http://localhost/web2-trabajo-especial-api-rest/api/room/4 
+    ➡ agregar y otro para modificar datos (POST y PUT) ✅
+        ➡http://localhost/web2-trabajo-especial-api-rest/api/rooms/
+        ➡http://localhost/web2-trabajo-especial-api-rest/api/rooms/ID DE LA HABITACION
+    ➡ paginar. ✅ http://localhost/web2-trabajo-especial-api-rest/api/rooms?order_by=Nombre&direction=ASC&page=2&itemspage=6 
+    ➡ colección entera debe poder filtrarse por alguno de sus campos. ✅http://localhost/web2-trabajo-especial-api-rest/api/room?filter=Capacidad&type=2
+    ➡ El servicio debe requerir un token para realizar modificaciones (PUT, POST)✅http://localhost/web2-trabajo-especial-api-rest/api/user/token
 
 
 
