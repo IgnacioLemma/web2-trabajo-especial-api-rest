@@ -205,3 +205,18 @@
     "foto_habitacion": "public/img/FotoHabitaciones/671557b408b611.73779563.jpg"
 }
 ```
+### Agregar Item (POST)
+- Verbo: POST
+- URL: `http://localhost/web2-trabajo-especial-api-rest/api/rooms/`
+- Descripción: Agrega una habitación
+- Body: Ejmplo JSON para agregar habitación
+```json
+{
+  "Nombre": "Habitación Económica - Cabañas en Tandil",
+  "Tipo": "Económica",
+  "Capacidad": 2,
+  "Precio": 450,
+  "foto_habitacion": "public/img/FotoHabitaciones/fotohabitaciontandil.jpg"
+}
+```
+- Aclaración: Requiere token (Bearer [token])
