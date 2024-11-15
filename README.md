@@ -17,6 +17,7 @@
 7. [Paginación](#paginación)
 8. [Filtrar Items (GET)](#filtrar-items-get)
 9. [Obtener Token](#token)
+10. [Autores](#autores)
 
 ## Endpoints de la API
 
@@ -368,3 +369,9 @@
     - En las peticiones PUT y POST:
           - Authorization : Bearer Token
               - Colocar el token dado en *TOKEN*         
+
+## AUTORES
+- Lemma Ignacio (A)
+    - **Mail**: ignaciolemma1803@gmail.com
+- Barrionuevo Noa (B)
+    - **Mail**: barrionuevonoa18@gmail.com
