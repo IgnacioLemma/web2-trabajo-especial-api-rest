@@ -20,6 +20,17 @@
             $itemsPage = isset($_GET['itemspage']) ? (int)$_GET['itemspage'] : 6;
             $all = isset($_GET['all']) ? $_GET['all'] === 'true' : false;
 
+            // "en el paginado el valor de la pagina es negativo o 0 se rompe" 
+            // Posible solucion:
+            /* if ($page <= 0) {
+                $this->view->response(['error' => 'Pagina inválida.'], 400); 
+                return;
+            }
+            if ($itemsPage <= 0) {
+                $this->view->response(['error' => 'itemsPage inválido.'], 400); 
+                return;
+            }
+            */
             // Verificación si se puede ordenar
             $validFyelds = ['id_habitacion', 'Nombre', 'Tipo', 'Capacidad', 'Precio'];
             if (!in_array($orderBy, $validFyelds)) {
@@ -36,11 +47,19 @@
                 $this->view->response($response, 200);
                 return;
             }
-
             $offset = ($page - 1) * $itemsPage;
             $totalRooms = $this->model->getTotalRooms();
             $totalPages = ceil($totalRooms / $itemsPage);
             $rooms = $this->model->getRoomsPaginado($orderBy, $direction, $offset, $itemsPage);
+
+            //Siguiente parte de la solucion:
+            /*
+            if ($page > $totalPages && $totalRooms > 0) {
+                $this->view->response(['error' => 'El número de página no está en las páginas disponibles.'], 404);
+                return;
+            }
+            */
+
             if ($rooms) {
                 $response = [
                     'page' => $page,
@@ -102,7 +121,13 @@
             if(!$res->user) {
                 return $this->view->response(['error' =>'No posee los permisos para editar habitaciones'], 401);
             }
-            $id_habitacion = $request->params->id;
+            $id_habitacion = $request->params->id; // ?? null;
+            //  put si no paso el id por parametro de ruta me tira una respuesta 200
+            /*
+            if (!$id_habitacion) {
+                    return $this->view->response(['error' => 'ID de la habitación no especificado'], 400);
+                }
+            */
             if (!isset($request->body->Nombre) || 
                 !isset($request->body->Tipo) || 
                 !isset($request->body->Capacidad) || 

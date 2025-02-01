@@ -1,8 +1,8 @@
 <?php
     class Request {
-        public $body = null; # { nombre: 'Saludar', descripcion: 'Saludar a todos' } JSON
-        public $params = null; # /api/tareas/:id
-        public $query = null; # ?soloFinalizadas=true
+        public $body = null; 
+        public $params = null;
+        public $query = null;
 
         public function __construct() {
             try {
